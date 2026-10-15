@@ -1,0 +1,41 @@
+name: PDFWorkbench
+
+options:
+  bundleIdPrefix: com.stywn93      # GANTI dengan prefix Anda
+  deploymentTarget:
+    macOS: "14.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    SWIFT_STRICT_CONCURRENCY: minimal
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    ENABLE_HARDENED_RUNTIME: YES
+
+targets:
+  PDFWorkbench:
+    type: application
+    platform: macOS
+    sources:
+      - PDFWorkbench
+      - Assets.xcassets
+    info:
+      path: PDFWorkbench/Info.plist
+      properties:
+        CFBundleDisplayName: PDF Workbench
+        CFBundleDevelopmentRegion: id
+        LSApplicationCategoryType: public.app-category.productivity
+        LSMinimumSystemVersion: "14.0"
+    entitlements:
+      path: PDFWorkbench/PDFWorkbench.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.files.user-selected.read-write: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.PDFWorkbench
+        CODE_SIGN_STYLE: Automatic
+        # Isi DEVELOPMENT_TEAM dengan Team ID Anda, atau pilih di Xcode > Signing.
+        # DEVELOPMENT_TEAM: XXXXXXXXXX
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
